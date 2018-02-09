@@ -1,0 +1,146 @@
+=>PYTHONTEX#pylab#firstsession#default#0#code#####15#
+import numpy as np
+import matplotlib.patches as mpatches
+N = 200
+t=0
+x_olde=5
+v_olde=.5
+x_oldi = x_olde
+v_oldi = v_olde
+h= .1
+det = 1/(1 + (h)**2)
+for i in range(N+1):
+    t_new = t + h*i
+    X= 5*np.cos(t_new)
+    V= -5*np.sin(t_new)
+    x_newe = x_olde +(h*v_olde)
+    x_newi = det*(x_oldi +(h*v_oldi))
+    v_newe = v_olde -(h*x_olde)
+    v_newi = det*(v_oldi-(h*x_oldi))
+    Ee= (x_newe)**2 + (v_newe)**2
+    Ei=(det*x_newi)**2 + (det*v_newi)**2
+    E = X**2 + V**2
+    figure(0)
+    plot(t_new,x_newe,'bo');plot(t_new, v_newe,'ro')#explicit
+    plot(t_new,x_newi,'ko');plot(t_new, v_newi, 'yo')#implicit
+    figure(1)
+    plot(t_new,X-x_newe,'bo' );plot(t_new,V-v_newe,'ro') #explicit error
+    plot(t_new,X-x_newi,'ko' );plot(t_new,V-v_newi,'yo')#implicit error
+    figure(2)
+    plot(t_new,Ee, 'g*'); plot(t_new,Ei,'r*'); plot(t_new, E, 'ko')
+    figure(3)
+    ##phase space
+    plot(x_newe, v_newe,'r<'); plot(x_newi, v_newi, 'y>' ); plot(X,V,'bo')
+    x_olde = x_newe
+    v_olde = v_newe
+    x_oldi = x_newi
+    v_oldi = v_newi
+x_old=5
+v_old=.5
+##symplectic Euler
+for i in range(0,N+1):
+    t_new = t + h*i
+    x_new = x_old + h*v_old
+    v_new = v_old - h*(x_new)
+    X= 5*np.cos(t_new)
+    V= -5*np.sin(t_new)
+    Es = (x_new)**2 + (v_new)**2
+    E = X**2 + V**2
+    figure(3)
+    plot(x_new,v_new, 'g*')
+    figure(4)
+    plot(t_new,Es, 'bo')
+    x_old = x_new
+    v_old = v_new
+figure(0)
+xlabel('time')
+blue_patch = mpatches.Patch(color='blue', label='x explicit euler')
+red_patch = mpatches.Patch(color='red', label='v explicit euler')
+black_patch = mpatches.Patch(color='black', label='x implicit euler')
+yellow_patch = mpatches.Patch(color='yellow', label='v implicit euler')
+legend(handles=[blue_patch, red_patch, black_patch, yellow_patch])
+savefig('HarmonicMotion.pdf')
+figure(1)
+xlabel('time')
+blue_patch = mpatches.Patch(color='blue', label='x explicit euler error')
+red_patch = mpatches.Patch(color='red', label='v explicit euler error')
+black_patch = mpatches.Patch(color='black', label='x implicit euler error')
+yellow_patch = mpatches.Patch(color='yellow', label='v implicit euler error')
+legend(handles=[blue_patch, red_patch, black_patch, yellow_patch])
+savefig('Globalerror.pdf')
+figure(2)
+xlabel('time')
+ylabel('Energy')
+green_patch = mpatches.Patch(color='green', label='Explicit Energy')
+red_patch = mpatches.Patch(color='red', label='Implicit Energy')
+black_patch = mpatches.Patch(color='black', label= 'Analytic Energy')
+legend(handles= [green_patch, red_patch, black_patch])
+savefig('Energy.pdf')
+figure(3)
+xlabel('X')
+ylabel('V')
+red_patch = mpatches.Patch(color='red', label=' Explicit Euler')
+yellow_patch = mpatches.Patch(color='yellow', label='Implicit Euler')
+blue_patch = mpatches.Patch(color='blue', label='Analytic')
+green_patch = mpatches.Patch(color='green', label='Symplectic Euler')
+legend(handles=[red_patch, yellow_patch, blue_patch, green_patch])
+savefig('PhaseSpace.pdf')
+figure(4)
+xlabel('time')
+ylabel('Energy')
+blue_patch = mpatches.Patch(color='blue', label='Symplectic Energy')
+legend(handles= [blue_patch])
+savefig('EnergySym.pdf')
+
+=>PYTHONTEX#pylab#secondsession#default#0#code#####133#
+#
+import numpy as np
+h=0.1
+for j in range (5):
+	h = h/(2**j)
+	N = 200
+	t=0
+	x_olde=5
+	v_olde=.5
+	truncation=[]
+	for i in range(0,N+1):
+		t_new = t + h*i
+		X= 5*np.cos(t_new)
+		V= -5*np.sin(t_new)
+		x_newe = x_olde +(h*v_olde)
+		v_newe = v_olde -(h*x_olde)
+		truncation.append(abs(X-x_newe))
+       		x_olde = x_newe
+       		v_olde = v_newe
+	maxerror=max(truncation)
+	plot(h, maxerror, 'bo')
+semilogy()
+semilogx()
+xlabel('h')
+ylabel('truncation error')
+savefig('truncationerror.pdf')
+=>PYTHONTEX:SETTINGS#
+version=0.15
+outputdir=pythontex-files-Harmonic-Oscillator
+workingdir=.
+workingdirset=false
+gobble=none
+rerun=default
+hashdependencies=default
+makestderr=false
+stderrfilename=full
+keeptemps=none
+pyfuture=default
+pyconfuture=none
+pygments=true
+pygglobal=:GLOBAL||
+fvextfile=-1
+pyconbanner=none
+pyconfilename=stdin
+depythontex=false
+pygfamily=py|python|
+pygfamily=pycon|pycon|
+pygfamily=sympy|python|
+pygfamily=sympycon|pycon|
+pygfamily=pylab|python|
+pygfamily=pylabcon|pycon|
