@@ -1,4 +1,4 @@
-=>PYTHONTEX#pylab#firstsession#default#0#code#####15#
+=>PYTHONTEX#pylab#firstsession#default#0#code#####29#
 import numpy as np
 import matplotlib.patches as mpatches
 N = 200
@@ -92,7 +92,7 @@ blue_patch = mpatches.Patch(color='blue', label='Symplectic Energy')
 legend(handles= [blue_patch])
 savefig('EnergySym.pdf')
 
-=>PYTHONTEX#pylab#secondsession#default#0#code#####133#
+=>PYTHONTEX#pylab#secondsession#default#0#code#####147#
 #
 import numpy as np
 h=0.1
@@ -120,10 +120,9 @@ xlabel('h')
 ylabel('truncation error')
 savefig('truncationerror.pdf')
 =>PYTHONTEX:SETTINGS#
-version=0.15
+version=v0.12
 outputdir=pythontex-files-Harmonic-Oscillator
-workingdir=.
-workingdirset=false
+workingdir=pythontex-files-Harmonic-Oscillator
 gobble=none
 rerun=default
 hashdependencies=default

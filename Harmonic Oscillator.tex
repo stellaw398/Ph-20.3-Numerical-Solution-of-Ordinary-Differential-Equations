@@ -1,12 +1,26 @@
 \documentclass{article}
 \usepackage{pythontex}
 \usepackage{graphicx}
-\title{Ph 20.3 - Numerical Solution of Ordinary Differential Equations}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\newcommand{\cdw}[1]
+           {{\color{blue} [CDW: comment] #1}}
+\newcommand{\correct}[1]
+           {{\color{red} [CDW: needs correction] #1}}
+
+           \title{Ph 20.3 - Numerical Solution of Ordinary Differential Equations
+           \cdw{PASS}}
 \author{Stella Wang}
 \date{ 7 February 2018}
 \begin{document}
 	\maketitle
-I am using pythontex to run the python code and generate the .pdf files. First compile this latex file and then run pythontex and then recompile.
+        I am using pythontex to run the python code and generate the .pdf files. First compile this latex file and then run pythontex and then recompile.
+
+        \cdw{
+          \begin{enumerate}
+          \item pythontex is very cool---thanks for introducing me to it.
+          \item When you do \texttt{includegraphics}, make sure you specify a width---I see the figures going off the edge of the page.
+          \end{enumerate}
+            }
 
 \section{Part 1}
 
@@ -122,7 +136,7 @@ It can be seen that the error for implicit Euler method is lower than the error 
 The total energy of the system $E = x^2 + v^2$ should be constant. Plotted below is the energy as a function of time for explicit and implicit euler and the analytic solution. The analytic solution is constant as we would expect, while the implicit euler method decreases (similar to the overall harmonic motion) and explicit euler increases respectively. (Figure 3)
 \begin{figure}[h]
 \includegraphics{Energy}
-\caption{Total Energy}
+\caption{Total Energy\cdw{I'm pretty sure I know which is which, but all three lines are the same color.}}
 \end{figure}
 
 The truncation error for explicit error is shown in figure 4. The error is plotted versus h for $h_o, h_o/2, h_o/4, h_o/8$ and $ h_o/16$ , $h_o=0.1$.The plot is log-log and is nearly linear, showing that for reasonably small $h$, the error is proportional. (Figure 4)
