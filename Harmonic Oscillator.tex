@@ -123,19 +123,19 @@ savefig('EnergySym.pdf')
 \end{pylabcode}
 
 \begin{figure}[h]
-\includegraphics{HarmonicMotion}
+\includegraphics[width= \linewidth]{HarmonicMotion}
 \caption{Simple Harmonic Motion using Explicit and Implicit Euler method}
 \end{figure}
 
 The analytic solution for the Simple Harmonic Oscillator is of the generalized form $ x(t) = A \cos( \omega t + \phi)$ and $ v(t) = -A \omega \sin( \omega t + \phi)$. For our system with initial conditions $x_o = 5$ and $v_o = 0.5$ it is found that  $A=5$, $\omega = 0$ and $ \phi = 0$. A plot of the global error for both the implicit and explicit Euler method is shown below. 
 It can be seen that the error for implicit Euler method is lower than the error for explicit Euler method, but both grow with each cycle.(Figure 2)
 \begin{figure}[h]
-\includegraphics{Globalerror}
+\includegraphics[width= \linewidth]{Globalerror}
 \caption{Global Error}
 \end{figure}
 The total energy of the system $E = x^2 + v^2$ should be constant. Plotted below is the energy as a function of time for explicit and implicit euler and the analytic solution. The analytic solution is constant as we would expect, while the implicit euler method decreases (similar to the overall harmonic motion) and explicit euler increases respectively. (Figure 3)
 \begin{figure}[h]
-\includegraphics{Energy}
+\includegraphics[width= \linewidth]{Energy}
 \caption{Total Energy\cdw{I'm pretty sure I know which is which, but all three lines are the same color.}}
 \end{figure}
 
@@ -173,7 +173,7 @@ ylabel('truncation error')
 savefig('truncationerror.pdf') 
 \end{pylabcode}
 \begin{figure}
-\includegraphics{truncationerror}[h]
+\includegraphics[width= \linewidth]{truncationerror}[h]
 \caption{Truncation Error versus h}
 \end{figure}
 \section{Part 2}
@@ -182,11 +182,11 @@ The phase space diagram for all the methods is shown below. The analytical solut
 The total energy for Symplectic Euler oscillates around the constant total energy value. This makes sense, because the phase space shows that symplectic euler is elliptic. An ellipse is a circle with a phase, so naturally the energy should oscillate. (Figure 6)
 
 \begin{figure}
-\includegraphics{PhaseSpace}
+\includegraphics[width= \linewidth]{PhaseSpace}
 \caption{Phase Space}
 \end{figure}
 \begin{figure}
-\includegraphics{EnergySym}
+\includegraphics[width= \linewidth]{EnergySym}
 \caption{Total Energy for Symplectic Euler}
 \end{figure}
 \end{document}
