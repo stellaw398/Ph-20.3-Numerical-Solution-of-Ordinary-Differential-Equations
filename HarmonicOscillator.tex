@@ -1,11 +1,18 @@
 \documentclass{article}
 \usepackage{pythontex}
 \usepackage{graphicx}
-\title{Ph 20.3 - Numerical Solution of Ordinary Differential Equations}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\newcommand{\cdw}[1]
+           {{\color{blue} [CDW: comment] #1}}
+\newcommand{\correct}[1]
+           {{\color{red} [CDW: needs correction] #1}}
+\title{Ph 20.3 - Numerical Solution of Ordinary Differential Equations
+\\\correct{}}
 \author{Stella Wang}
 \date{ 7 February 2018}
 \begin{document}
-	\maketitle
+\maketitle
+\correct{You need to include the Python source and the git log in this pdf}
 \section{Part 1}
 
 Below is a plot of x and v as a function of time for both the implicit and explicit Euler method. From the plot it is clear that the error grows rapidly with each cycle for both methods. The explicit oscillations increase in amplitude while the implicit oscillations decrease in amplitude. For both methods an $h = 0.1$ was used. (Figure 1)
