@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{pythontex}
 \usepackage{graphicx}
+\usepackage{verbatim}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \newcommand{\cdw}[1]
            {{\color{blue} [CDW: comment] #1}}
@@ -13,6 +14,8 @@
 \begin{document}
 \maketitle
 \correct{You need to include the Python source and the git log in this pdf}
+\verbatiminput{log.log}
+this is a git log 
 \section{Part 1}
 
 Below is a plot of x and v as a function of time for both the implicit and explicit Euler method. From the plot it is clear that the error grows rapidly with each cycle for both methods. The explicit oscillations increase in amplitude while the implicit oscillations decrease in amplitude. For both methods an $h = 0.1$ was used. (Figure 1)
