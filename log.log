@@ -1,0 +1,39 @@
+55c6c93 was Stella Wang, 2 days ago, message: first commit
+diff --git a/README.md b/README.md
+index 7db83c8..2b6006d 100644
+--- a/README.md
++++ b/README.md
+@@ -1,3 +1,5 @@
+ # Week-3-Ph20-Winter-2017-2018
+ # Ph-20.5-and-Ph-20.6---Mathematica-Intensive-Assignments
+ # Ph-20.5-and-Ph-20.6---Mathematica-Intensive-Assignments
++# Ph-20.5-and-Ph-20.6---Mathematica-Intensive-Assignments
++# Ph-20.5-andPh-20.6---Mathematica-Intensive-Assignments
+
+d0ff9d9 was Stella Wang, 2 days ago, message: first commit
+diff --git a/README.md b/README.md
+index 4c4aafb..7db83c8 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,3 @@
+ # Week-3-Ph20-Winter-2017-2018
+ # Ph-20.5-and-Ph-20.6---Mathematica-Intensive-Assignments
++# Ph-20.5-and-Ph-20.6---Mathematica-Intensive-Assignments
+
+70f671f was Stella Wang, 2 days ago, message: first commit
+diff --git a/README.md b/README.md
+index 94fe472..4c4aafb 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,2 @@
+ # Week-3-Ph20-Winter-2017-2018
++# Ph-20.5-and-Ph-20.6---Mathematica-Intensive-Assignments
+
+92e94a4 was Stella Wang, 7 weeks ago, message: first commit
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..94fe472
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1 @@
++# Week-3-Ph20-Winter-2017-2018
